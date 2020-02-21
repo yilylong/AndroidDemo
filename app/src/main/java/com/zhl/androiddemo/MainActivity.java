@@ -1,5 +1,6 @@
 package com.zhl.androiddemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,8 +12,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnLocation = findViewById(R.id.btn_location);
+        btnLocation.setOnClickListener(this);
 
     }
 
@@ -54,5 +58,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_location:
+                Intent intent = new Intent(this,LocationActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
