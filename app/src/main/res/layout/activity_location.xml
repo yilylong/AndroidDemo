@@ -8,9 +8,9 @@
         android:id="@+id/location_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:gravity="center_vertical"
         android:hint="正在定位..."
+        android:padding="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,6 +22,16 @@
         android:layout_marginTop="20dp"
         android:text="更新位置信息"
         app:layout_constraintTop_toBottomOf="@+id/location_result"
+
+        />
+
+    <Button
+        android:id="@+id/btn_location_geofencing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="以当前位置200m半径创建地理围栏"
+        app:layout_constraintTop_toBottomOf="@+id/btn_location_update"
 
         />
 
