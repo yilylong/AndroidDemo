@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ServiceTestActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -28,14 +29,17 @@
         <activity
             android:name=".LocationActivity"
             android:parentActivityName=".MainActivity" />
-
-        <activity android:name=".CameraXActivity"/>
+        <activity android:name=".CameraXActivity" />
 
         <service
             android:name=".service.FetchAddressIntentService"
             android:exported="false" />
 
         <receiver android:name=".recevier.GeofenceBroadcastReceiver" />
+
+        <service
+            android:name=".service.LocalService"
+            android:exported="false" />
     </application>
 
 </manifest>

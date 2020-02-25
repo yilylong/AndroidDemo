@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         createNotificationChannel();
         Button btnLocation = findViewById(R.id.btn_location);
         btnLocation.setOnClickListener(this);
+        Button btnService = findViewById(R.id.btn_service);
+        btnService.setOnClickListener(this);
         Button btnCamerax = findViewById(R.id.btn_camerax);
         btnCamerax.setOnClickListener(this);
     }
@@ -70,6 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_location:
                 Intent intent = new Intent(this,LocationActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_service:
+                Intent intentService = new Intent(this,ServiceTestActivity.class);
+                startActivity(intentService);
                 break;
             case R.id.btn_camerax:
                 Intent intent2 = new Intent(this,CameraXActivity.class);
