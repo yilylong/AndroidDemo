@@ -3,12 +3,14 @@ package com.zhl.androiddemo;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnService.setOnClickListener(this);
         Button btnCamerax = findViewById(R.id.btn_camerax);
         btnCamerax.setOnClickListener(this);
+        Button btnDayNight = findViewById(R.id.btn_daynight);
+        btnDayNight.setOnClickListener(this);
     }
 
     @Override
@@ -81,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2 = new Intent(this,CameraXActivity.class);
                 startActivity(intent2);
                 break;
+            case R.id.btn_daynight:
+                Intent intent3 = new Intent(this,DayNightActivity.class);
+                startActivity(intent3);
+                break;
         }
     }
 
@@ -98,5 +106,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        int currentNightMode = newConfig.uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        Toast.makeText(this,"更改主题："+(currentNightMode==Configuration.UI_MODE_NIGHT_NO?"日间模式":"夜间模式"),Toast.LENGTH_SHORT).show();
+        switch (currentNightMode){
+            case Configuration.UI_MODE_NIGHT_NO:
+
+                break;
+            case Configuration.UI_MODE_NIGHT_YES:
+
+                break;
+        }
+        recreate();
+        super.onConfigurationChanged(newConfig);
     }
 }

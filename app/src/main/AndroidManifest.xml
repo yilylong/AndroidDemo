@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ServiceTestActivity"></activity>
+        <activity android:name=".DayNightActivity"></activity>
+        <activity android:name=".ServiceTestActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
