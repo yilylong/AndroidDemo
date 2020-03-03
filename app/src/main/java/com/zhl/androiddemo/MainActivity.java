@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCamerax.setOnClickListener(this);
         Button btnDayNight = findViewById(R.id.btn_daynight);
         btnDayNight.setOnClickListener(this);
+        Button btnDrag = findViewById(R.id.btn_drag);
+        btnDrag.setOnClickListener(this);
     }
 
     @Override
@@ -91,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_daynight:
                 Intent intent3 = new Intent(this,DayNightActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.btn_drag:
+                Intent intentDrag = new Intent(this,DragEventActivity.class);
+                startActivity(intentDrag);
                 break;
         }
     }
