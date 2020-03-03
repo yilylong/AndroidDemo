@@ -1,11 +1,11 @@
 package com.zhl.androiddemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class DayNightActivity extends AppCompatActivity {
 
@@ -22,7 +22,7 @@ public class DayNightActivity extends AppCompatActivity {
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 }
-                recreate();
+//                recreate();
             }
         });
     }
