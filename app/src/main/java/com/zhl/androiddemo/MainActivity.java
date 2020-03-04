@@ -12,10 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
+import com.zhl.androiddemo.mvvm.MvvmActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDayNight.setOnClickListener(this);
         Button btnDrag = findViewById(R.id.btn_drag);
         btnDrag.setOnClickListener(this);
+        Button btnMvvm = findViewById(R.id.btn_mvvm);
+        btnMvvm.setOnClickListener(this);
     }
 
     @Override
@@ -97,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_drag:
                 Intent intentDrag = new Intent(this,DragEventActivity.class);
                 startActivity(intentDrag);
+            case R.id.btn_mvvm:
+                Intent intentMvvm = new Intent(this, MvvmActivity.class);
+                startActivity(intentMvvm);
                 break;
         }
     }
