@@ -114,6 +114,7 @@ public class LocationActivity extends AppCompatActivity implements OnSuccessList
             Toast.makeText(this, "位置信息获取失败", Toast.LENGTH_SHORT).show();
             return;
         }
+
         if(ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_BACKGROUND_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},1001);
         }else {

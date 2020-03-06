@@ -29,6 +29,14 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(this, MvvmDataBindingActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_livedata_test:
+                Intent intent2 = new Intent(this, LiveDataActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.btn_room_test:
+                Intent intent3 = new Intent(this, RoomActivitiy.class);
+                startActivity(intent3);
+                break;
         }
     }
 }
