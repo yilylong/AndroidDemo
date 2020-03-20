@@ -12,11 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.zhl.androiddemo.kotlin.MainKotlinActivity;
 import com.zhl.androiddemo.mvvm.MvvmActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDrag.setOnClickListener(this);
         Button btnMvvm = findViewById(R.id.btn_mvvm);
         btnMvvm.setOnClickListener(this);
+        Button btnKotlin = findViewById(R.id.btn_kotlin);
+        btnKotlin.setOnClickListener(this);
     }
 
     @Override
@@ -103,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_mvvm:
                 Intent intentMvvm = new Intent(this, MvvmActivity.class);
                 startActivity(intentMvvm);
+                break;
+            case R.id.btn_kotlin:
+                Intent intentKotlin = new Intent(this, MainKotlinActivity.class);
+                startActivity(intentKotlin);
                 break;
         }
     }
