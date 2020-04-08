@@ -1,4 +1,4 @@
-package com.zhl.androiddemo.kotlin.beans
+package com.zhl.androiddemo.kotlin
 
 import android.util.Log
 
@@ -27,4 +27,16 @@ class Utils {
         // map 取值使用get 或者 []
         Log.d("mytag","map调用"+map[key])
     }
+    fun testHigherFun(paramFun:(String)->Unit){
+        paramFun("函数类型参数");
+    }
+
+    var a = ::testHigherFun
+
+    fun c(paramFun: (String) -> Unit){
+        paramFun("dddd");
+    }
+
+    var d = c(::testMap);
+
 }
