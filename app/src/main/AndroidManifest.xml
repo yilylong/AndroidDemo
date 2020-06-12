@@ -28,6 +28,7 @@
         <activity android:name=".DayNightActivity" />
         <activity android:name=".ServiceTestActivity" />
         <activity android:name=".mvvm.DataBindingWithRecyclerView" />
+        <activity android:name=".LinkListActivity" />
         <activity
             android:name=".MainActivity"
             android:configChanges="uiMode"

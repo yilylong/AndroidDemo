@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMvvm.setOnClickListener(this);
         Button btnKotlin = findViewById(R.id.btn_kotlin);
         btnKotlin.setOnClickListener(this);
+        Button btnLink = findViewById(R.id.btn_linklist_test);
+        btnLink.setOnClickListener(this);
     }
 
     @Override
@@ -110,6 +112,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_kotlin:
                 Intent intentKotlin = new Intent(this, MainKotlinActivity.class);
                 startActivity(intentKotlin);
+                break;
+            case R.id.btn_linklist_test:
+                Intent intentLink = new Intent(this, LinkListActivity.class);
+                startActivity(intentLink);
                 break;
         }
     }
