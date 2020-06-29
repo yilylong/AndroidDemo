@@ -48,6 +48,16 @@
             android:textAllCaps="false"
             app:layout_constraintTop_toBottomOf="@+id/btn_livedata_test"
             tools:layout_editor_absoluteX="0dp" />
+        <Button
+            android:id="@+id/btn_kotlin_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:onClick="@{btnDataBindingListener}"
+            android:text="Kotlin_Test"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@+id/btn_room_test"
+            tools:layout_editor_absoluteX="0dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

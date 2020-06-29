@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import com.zhl.androiddemo.R;
 import com.zhl.androiddemo.databinding.ActivityMvvmBinding;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 public class MvvmActivity extends AppCompatActivity implements View.OnClickListener {
     private ActivityMvvmBinding activityMvvmBinding;
@@ -36,6 +36,10 @@ public class MvvmActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_room_test:
                 Intent intent3 = new Intent(this, RoomActivitiy.class);
                 startActivity(intent3);
+                break;
+            case R.id.btn_kotlin_test:
+                Intent intent4 = new Intent(this, MvvmKotlinActivity.class);
+                startActivity(intent4);
                 break;
         }
     }

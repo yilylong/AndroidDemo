@@ -29,6 +29,7 @@
         <activity android:name=".ServiceTestActivity" />
         <activity android:name=".mvvm.DataBindingWithRecyclerView" />
         <activity android:name=".LinkListActivity" />
+        <activity android:name=".mvvm.MvvmKotlinActivity" />
         <activity
             android:name=".MainActivity"
             android:configChanges="uiMode"

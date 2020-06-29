@@ -2,9 +2,16 @@ package com.zhl.androiddemo.kotlin
 
 import com.zhl.androiddemo.kotlin.beans.*
 import com.zhl.androiddemo.kotlin.beans.Utils
+import com.zhl.androiddemo.kotlin.extend.beginsWith
 import com.zhl.androiddemo.kotlin.extend.build
 import com.zhl.androiddemo.kotlin.extend.num1Andnum2
 import com.zhl.androiddemo.kotlin.extend.speak
+import com.zhl.androiddemo.kotlin.network.ApiService
+import com.zhl.androiddemo.kotlin.network.GithubService
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * 描述：
@@ -21,6 +28,7 @@ fun main() {
     nullableFun("空指针检查机制")
     standardFun()
     extendFun()
+    retrofitFun("square","retrofit")
 }
 
 fun forFun1(){
@@ -161,6 +169,10 @@ fun extendFun(){
         append("append finish \n")
     }
     println(sb.toString());
+    Singleton.divider("infix 函数测试 可以使用特殊的语法糖格式调用函数")
+    if("hello kotlin" beginsWith "hello"){
+        println("使用特殊的语法糖格式调用 'hello kotlin' beginsWith 'hello'")
+    }
 }
 
 fun plus(n1:Int,n2:Int):Int{
@@ -169,4 +181,19 @@ fun plus(n1:Int,n2:Int):Int{
 
 fun minus(n1:Int,n2:Int):Int{
     return n1*n2
+}
+
+fun retrofitFun(group:String,name:String){
+    Singleton.divider("retrofit 联网测试")
+    ApiService.create<GithubService>().getGithubDetail(group,name).enqueue(object :Callback<ResponseBody>{
+
+        override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            println(response.body()?.byteStream().toString());
+        }
+
+        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            println("请求失败：url=${call.request().url()} 错误信息：${t.message}");
+        }
+
+    })
 }
