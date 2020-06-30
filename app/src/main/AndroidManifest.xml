@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".kotlin.MainKotlinActivity"></activity>
+        <activity android:name=".ActivityBWithFragment"></activity>
+        <activity android:name=".kotlin.MainKotlinActivity" />
         <activity android:name=".mvvm.RoomActivitiy" />
         <activity android:name=".mvvm.LiveDataActivity" />
         <activity android:name=".mvvm.MvvmActivity" />

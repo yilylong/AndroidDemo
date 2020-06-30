@@ -1,6 +1,8 @@
 package com.zhl.androiddemo.kotlin
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -10,12 +12,15 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.FutureTarget
+import com.zhl.androiddemo.ActivityBWithFragment
+import com.zhl.androiddemo.BlankFragment
 import com.zhl.androiddemo.R
 import com.zhl.androiddemo.databinding.ActivityMainKotlinBinding
 import com.zhl.androiddemo.kotlin.beans.Animal
 import com.zhl.androiddemo.kotlin.beans.Dog
 import com.zhl.androiddemo.mvvm.bean.Person
 import com.zhl.androiddemo.mvvm.utils.ClickUtils
+import kotlinx.android.synthetic.main.activity_main_kotlin.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -37,7 +42,13 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main_kotlin)
         binding = DataBindingUtil.setContentView<ActivityMainKotlinBinding>(this, R.layout.activity_main_kotlin)
         binding.tvResult = v1 + v2
-        binding.setClickListener { this }
+        binding.setClickListener {
+            this
+        }
+        btn_test.setOnClickListener {
+            val intent = Intent(this,ActivityBWithFragment::class.java)
+            startActivity(intent)
+        }
         // 匿名内部类的写法 object:
 //        binding.setClickListener { object :View.OnClickListener{
 //            override fun onClick(v: View?) {
@@ -69,6 +80,7 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
         CoroutinesTest().coroutinesTest()
     }
 
+
     /**
      * kotlin里参数默认是val 类型
      */
@@ -81,6 +93,10 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_kotlin -> {
                 ClickUtils().changeTextStr(v)
+            }
+            R.id.btn_test-> {
+                val intent = Intent(this,ActivityBWithFragment::class.java)
+                startActivity(intent)
             }
         }
     }
@@ -98,4 +114,5 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
             requestBuilder.into(binding.image)
         }
     }
+
 }
