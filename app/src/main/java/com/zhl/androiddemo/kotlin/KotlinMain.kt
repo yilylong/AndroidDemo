@@ -2,16 +2,14 @@ package com.zhl.androiddemo.kotlin
 
 import com.zhl.androiddemo.kotlin.beans.*
 import com.zhl.androiddemo.kotlin.beans.Utils
-import com.zhl.androiddemo.kotlin.extend.beginsWith
-import com.zhl.androiddemo.kotlin.extend.build
-import com.zhl.androiddemo.kotlin.extend.num1Andnum2
-import com.zhl.androiddemo.kotlin.extend.speak
+import com.zhl.androiddemo.kotlin.extend.*
 import com.zhl.androiddemo.kotlin.network.ApiService
 import com.zhl.androiddemo.kotlin.network.GithubService
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.reflect.KProperty
 
 /**
  * 描述：
@@ -126,7 +124,7 @@ fun getTextLenth(tx:String?)= tx?.length?:0
  * 标准函数 with run apply
  */
 fun standardFun(){
-    Singleton.divider("with 函数")
+    Singleton.divider("with 函数 可以同时在lambda表达式中调用第一个参数对象的多个方法")
     val with = with(Student(3,103,"jack")){
         studyMaths()
         studyEnglish()
@@ -196,4 +194,27 @@ fun retrofitFun(group:String,name:String){
         }
 
     })
+}
+
+fun getScore(name: String)= when(name){
+    "Tom" -> 77
+    "jack" ->88
+    "hubd"->73
+    else ->88
+}
+
+class ProxyTest{
+    // 属性委托
+    var p by Delegates()
+}
+
+class Delegates {
+    var propValue:Any? = null
+    operator fun getValue(proxyTest: ProxyTest, property: KProperty<*>): Any? {
+        return propValue
+    }
+    operator fun setValue(proxyTest: ProxyTest, property: KProperty<*>, any: Any?) {
+
+    }
+
 }

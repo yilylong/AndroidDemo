@@ -49,6 +49,14 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
             val intent = Intent(this,ActivityBWithFragment::class.java)
             startActivity(intent)
         }
+        btn_recyclerview.setOnClickListener{
+//            val intent = Intent(this,ListActivity::class.java)
+//            startActivity(intent)
+            com.zhl.androiddemo.kotlin.extend.startActivity<ListActivity>(this){
+                putExtra("data","11111")
+                putExtra("params","参数")
+            }
+        }
         // 匿名内部类的写法 object:
 //        binding.setClickListener { object :View.OnClickListener{
 //            override fun onClick(v: View?) {

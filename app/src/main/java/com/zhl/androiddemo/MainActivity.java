@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.zhl.androiddemo.kotlin.MainKotlinActivity;
+import com.zhl.androiddemo.kotlin.MyService;
 import com.zhl.androiddemo.mvvm.MvvmActivity;
+import com.zhl.androiddemo.rxjava.RxJavaMainActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnKotlin.setOnClickListener(this);
         Button btnLink = findViewById(R.id.btn_linklist_test);
         btnLink.setOnClickListener(this);
+        Button btnRxJava = findViewById(R.id.btn_rxjava_test);
+        btnRxJava.setOnClickListener(this);
     }
 
     @Override
@@ -117,6 +121,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentLink = new Intent(this, LinkListActivity.class);
                 startActivity(intentLink);
                 break;
+            case R.id.btn_rxjava_test:
+                Intent intentRxJava = new Intent(this, RxJavaMainActivity.class);
+                startActivity(intentRxJava);
+                break;
         }
     }
 
@@ -149,5 +157,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
         super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this, MyService.class));
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.cancel(1);
     }
 }

@@ -84,5 +84,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_kotlin" />
+    <Button
+        android:id="@+id/btn_rxjava_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RxJava"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_linklist_test" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

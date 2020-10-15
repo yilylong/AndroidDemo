@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ActivityBWithFragment"></activity>
+        <activity android:name=".rxjava.RxJavaMainActivity"></activity>
+        <activity android:name=".ActivityBWithFragment" />
         <activity android:name=".kotlin.MainKotlinActivity" />
         <activity android:name=".mvvm.RoomActivitiy" />
         <activity android:name=".mvvm.LiveDataActivity" />
@@ -46,6 +47,7 @@
             android:name=".LocationActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".CameraXActivity" />
+        <activity android:name=".kotlin.ListActivity" />
 
         <service
             android:name=".service.FetchAddressIntentService"
@@ -55,6 +57,9 @@
 
         <service
             android:name=".service.LocalService"
+            android:exported="false" />
+        <service
+            android:name=".kotlin.MyService"
             android:exported="false" />
     </application>
 

@@ -1,5 +1,7 @@
 package com.zhl.androiddemo.kotlin.extend
 
+import android.content.Context
+import android.content.Intent
 import kotlin.reflect.KProperty
 
 /**
@@ -18,6 +20,16 @@ inline fun StringBuilder.build(block:StringBuilder.()->Unit):StringBuilder{
     block()
     return this
 }
+
+/**
+ * 泛型实化 和 高阶函数结合
+ */
+inline fun <reified T> startActivity(context: Context,block: Intent.()->Unit){
+    val intent = Intent(context,T::class.java);
+    intent.block()
+    context.startActivity(intent)
+}
+
 
 class MyClass{
     // 委托属性
