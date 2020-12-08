@@ -34,6 +34,8 @@ public class LinkListActivity extends AppCompatActivity {
         });
         node = generateLink();
         showNode(node);
+        ProgressLoadingView loadingView = findViewById(R.id.loadingview);
+        loadingView.startAnim();
     }
 
     private void showNode(Node node) {

@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnLink.setOnClickListener(this);
         Button btnRxJava = findViewById(R.id.btn_rxjava_test);
         btnRxJava.setOnClickListener(this);
+        Button btnMotionLayout = findViewById(R.id.btn_motion_layout);
+        btnMotionLayout.setOnClickListener(this);
     }
 
     @Override
@@ -124,6 +126,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_rxjava_test:
                 Intent intentRxJava = new Intent(this, RxJavaMainActivity.class);
                 startActivity(intentRxJava);
+                break;
+            case R.id.btn_motion_layout:
+                Intent intentMotionLayout = new Intent(this, MotionLayoutTestActivity.class);
+                startActivity(intentMotionLayout);
                 break;
         }
     }
