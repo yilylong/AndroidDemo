@@ -9,3 +9,10 @@ import android.util.Log
 fun topLevelFun1(){
     Log.d("mytag","toplevelFun1")
 }
+
+/**
+ * 高阶函数
+ */
+fun injectGus(gasModel:String,rating:Int,func:(String,Int)->Boolean){
+    func(gasModel,rating);
+}

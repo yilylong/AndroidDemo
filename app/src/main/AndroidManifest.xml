@@ -33,6 +33,7 @@
         <activity android:name=".LinkListActivity" />
         <activity android:name=".mvvm.MvvmKotlinActivity" />
         <activity android:name=".MotionLayoutTestActivity" />
+        <activity android:name=".kotlin.KotlinListActivity" />
         <activity
             android:name=".MainActivity"
             android:configChanges="uiMode"

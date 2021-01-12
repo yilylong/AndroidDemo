@@ -52,7 +52,7 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
         btn_recyclerview.setOnClickListener{
 //            val intent = Intent(this,ListActivity::class.java)
 //            startActivity(intent)
-            com.zhl.androiddemo.kotlin.extend.startActivity<ListActivity>(this){
+            com.zhl.androiddemo.kotlin.extend.startActivity<KotlinListActivity>(this){
                 putExtra("data","11111")
                 putExtra("params","参数")
             }

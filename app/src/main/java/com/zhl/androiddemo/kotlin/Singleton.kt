@@ -10,6 +10,17 @@ object Singleton {
     }
 
     fun divider(log:String){
-        println("----------"+log+"----------");
+        println("===== "+log+" ===== ");
+    }
+
+    fun line(log:String){
+        println("- - - - "+log+" - - - - ");
+    }
+
+    fun br(){
+        println("" +
+                "" +
+                "" +
+                "");
     }
 }
