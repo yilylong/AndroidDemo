@@ -19,7 +19,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".rxjava.RxJavaMainActivity"></activity>
+        <activity
+            android:name=".kotlin.navigation.BasicMainActivity"
+            android:label="@string/title_activity_basic_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".kotlin.navigation.DrawerNavigationMainActivity"
+            android:label="@string/title_activity_drawer_navigation_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".kotlin.navigation.BasciMainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".rxjava.RxJavaMainActivity" />
         <activity android:name=".ActivityBWithFragment" />
         <activity android:name=".kotlin.MainKotlinActivity" />
         <activity android:name=".mvvm.RoomActivitiy" />
@@ -34,6 +46,8 @@
         <activity android:name=".mvvm.MvvmKotlinActivity" />
         <activity android:name=".MotionLayoutTestActivity" />
         <activity android:name=".kotlin.KotlinListActivity" />
+        <activity android:name=".kotlin.CustomViewTestActivity" />
+        <activity android:name=".FlectAndProxyActivitiy" />
         <activity
             android:name=".MainActivity"
             android:configChanges="uiMode"

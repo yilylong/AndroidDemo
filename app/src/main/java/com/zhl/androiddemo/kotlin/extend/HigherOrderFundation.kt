@@ -9,13 +9,12 @@ import kotlin.reflect.KProperty
  * Created by zhaohl on 2020-6-23.
  */
 
-inline fun num1Andnum2(num1:Int,num2:Int,func:(Int,Int)->Int):Int{
+inline fun num1Andnum2(num1:Int,num2:Int,func:(Int,Int)->Int):Int {
     return func(num1,num2)
 }
-
 /**
  * 扩展函数与高阶函数结合
- */
+ */     
 inline fun StringBuilder.build(block:StringBuilder.()->Unit):StringBuilder{
     block()
     return this
@@ -29,6 +28,9 @@ inline fun <reified T> startActivity(context: Context,block: Intent.()->Unit){
     intent.block()
     context.startActivity(intent)
 }
+
+
+inline fun <reified T> genericType() = T::class.java;
 
 
 class MyClass{

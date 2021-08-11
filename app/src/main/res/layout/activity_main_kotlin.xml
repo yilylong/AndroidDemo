@@ -59,6 +59,7 @@
             android:text="跳转到测试Activity"
             android:textAllCaps="false"
             app:layout_constraintTop_toBottomOf="@+id/image" />
+
         <Button
             android:id="@+id/btn_recyclerview"
             android:layout_width="match_parent"
@@ -67,6 +68,15 @@
             android:text="跳转到列表"
             android:textAllCaps="false"
             app:layout_constraintTop_toBottomOf="@+id/btn_test" />
+
+        <Button
+            android:id="@+id/btn_customview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="自定义view测试"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@+id/btn_recyclerview" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

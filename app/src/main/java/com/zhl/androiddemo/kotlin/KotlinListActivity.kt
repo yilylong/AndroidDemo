@@ -1,10 +1,12 @@
 package com.zhl.androiddemo.kotlin
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.zhl.androiddemo.R
@@ -38,6 +40,16 @@ class KotlinListActivity : AppCompatActivity() {
     private fun initRecyclerview() {
         recyclerview.layoutManager = LinearLayoutManager(this)
         recyclerview.adapter = MyAdapter()
+
+        //高阶函数+扩展函数的结合运用
+        getSharedPreferences("highFuncTest", Context.MODE_PRIVATE).open {
+            putString("test1","adasdf")
+            putString("test2","adfag242")
+        }
+        getSharedPreferences("fromktx",Context.MODE_PRIVATE).edit {
+            putString("test1","adasdf")
+            putString("test2","adfag242")
+        }
     }
 
     inner class MyAdapter : RecyclerView.Adapter<ViewHolder>() {

@@ -108,4 +108,24 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_rxjava_test" />
 
+    <Button
+        android:id="@+id/btn_navigation_ui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="导航组件"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_motion_layout" />
+
+    <Button
+        android:id="@+id/btn_navigation_reflect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="反射代理"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_navigation_ui" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

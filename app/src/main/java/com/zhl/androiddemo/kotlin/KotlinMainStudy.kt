@@ -4,6 +4,8 @@ import android.content.Intent
 import com.zhl.androiddemo.kotlin.beans.Auto
 import com.zhl.androiddemo.kotlin.beans.Car
 import com.zhl.androiddemo.kotlin.beans.injectGas
+import com.zhl.androiddemo.kotlin.extend.genericType
+import kotlin.coroutines.suspendCoroutine
 
 /**
  * 描述：
@@ -97,7 +99,10 @@ fun standardMethod(){
 fun highLevelMethod(){
     Singleton.divider("扩展函数&高阶函数测试开始")
     Car(3,"宝马","X5").injectGas("中国石油",95)
+    Singleton.divider("泛型实化");
+    Singleton.line("---"+ genericType<Car>()+"---")
 }
+
 
 fun drive(auto: Auto?){
     auto?.let {

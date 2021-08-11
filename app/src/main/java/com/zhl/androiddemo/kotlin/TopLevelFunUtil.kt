@@ -11,8 +11,8 @@ fun topLevelFun1(){
 }
 
 /**
- * 高阶函数
+ * 高阶函数（加上inline就是内联函数消除高阶函数带来的额外的性能开销）
  */
-fun injectGus(gasModel:String,rating:Int,func:(String,Int)->Boolean){
+inline fun injectGus(gasModel:String,rating:Int,func:(String,Int)->Boolean){
     func(gasModel,rating);
 }

@@ -16,6 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.zhl.androiddemo.kotlin.MainKotlinActivity;
 import com.zhl.androiddemo.kotlin.MyService;
+import com.zhl.androiddemo.kotlin.navigation.BasicMainActivity;
 import com.zhl.androiddemo.mvvm.MvvmActivity;
 import com.zhl.androiddemo.rxjava.RxJavaMainActivity;
 
@@ -60,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRxJava.setOnClickListener(this);
         Button btnMotionLayout = findViewById(R.id.btn_motion_layout);
         btnMotionLayout.setOnClickListener(this);
+        Button basciMain = findViewById(R.id.btn_navigation_ui);
+        basciMain.setOnClickListener(this);
+        Button reflect = findViewById(R.id.btn_navigation_reflect);
+        reflect.setOnClickListener(this);
     }
 
     @Override
@@ -130,6 +135,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_motion_layout:
                 Intent intentMotionLayout = new Intent(this, MotionLayoutTestActivity.class);
                 startActivity(intentMotionLayout);
+                break;
+            case R.id.btn_navigation_ui:
+                Intent navigationMain = new Intent(this, BasicMainActivity.class);
+                startActivity(navigationMain);
+                break;
+            case R.id.btn_navigation_reflect:
+                Intent flectAndProxy = new Intent(this, FlectAndProxyActivitiy.class);
+                startActivity(flectAndProxy);
                 break;
         }
     }

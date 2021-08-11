@@ -21,10 +21,7 @@ import com.zhl.androiddemo.kotlin.beans.Dog
 import com.zhl.androiddemo.mvvm.bean.Person
 import com.zhl.androiddemo.mvvm.utils.ClickUtils
 import kotlinx.android.synthetic.main.activity_main_kotlin.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import java.io.File
 
 class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
@@ -57,6 +54,19 @@ class MainKotlinActivity : AppCompatActivity(), View.OnClickListener {
                 putExtra("params","参数")
             }
         }
+        btn_customview.setOnClickListener {
+            com.zhl.androiddemo.kotlin.extend.startActivity<CustomViewTestActivity>(this){}
+        }
+//        val job = Job()
+//        val scope = CoroutineScope(job)
+//        scope.launch {
+//            withContext(Dispatchers.Default){
+//                async {
+//
+//                }.await()
+//            }
+//        }
+//        job.cancel()
         // 匿名内部类的写法 object:
 //        binding.setClickListener { object :View.OnClickListener{
 //            override fun onClick(v: View?) {
